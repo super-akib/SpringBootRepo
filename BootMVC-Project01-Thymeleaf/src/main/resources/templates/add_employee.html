@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Add Employee Page</title>
+    <link rel="stylesheet" th:href="@{/css/add_employee.css}">
+</head>
+<body>
+   <div class="main_container">
+       <h2>Fill Employee Details Form</h2>
+       <div class="sub_container">
+         <form th:action="@{/home/add_emp}" th:object="${emp}" method="post">
+             <input type="text" th:field="*{employeeName}" placeholder="Enter employee name"/>
+             <input type="text" th:field="*{job}" placeholder="Enter job name" />
+             <input type="text" th:field="*{salary}" placeholder="Enter employee salary"/>
+             <input type="submit" value="Add Employee">
+             <input type="reset" value="Cancel">
+         </form>           
+       </div>
+   </div>
+</body>
+</html>

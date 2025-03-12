@@ -1,0 +1,66 @@
+@charset "ISO-8859-1";
+body {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100vh;
+    margin: 0;
+    background: linear-gradient(to right, #e0f7fa, #e0f2f1);
+}
+
+.main_container {
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: white;
+    border-radius: 15px;
+}
+
+h1 {
+    background: linear-gradient(to right, #f32170, #ff6b08, #cf23cf, #eedd44);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.sub_container {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    border-radius: 15px;
+    border: 1px solid rgb(219, 42, 116);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+input[type="text"], input[type="password"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+input[type="submit"] {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: rgb(219, 42, 116);
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+input[type="submit"]:hover {
+    background-color: rgb(255, 70, 140);
+}

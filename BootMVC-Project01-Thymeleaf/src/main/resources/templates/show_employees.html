@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Employee Record Page</title>
+    <link rel="stylesheet" th:href="@{/css/show_employee.css}">
+</head>
+
+<body>
+    <div class="main_container">
+        <h1>Employee Management System</h1>
+        <a th:href="@{/home/add_emp}">
+            <img th:src="@{/images/register.png}" width="30px" height="30px" />
+        </a>
+        <div th:if="${!employeeList.empty}">
+            <table>
+                <tr>
+                    <th>#</th>
+                    <th>Name</th>
+                    <th>Job</th>
+                    <th>Salary</th>
+                    <th>Actions</th>
+                </tr>
+                <tr th:each="employee : ${employeeList}">
+                    <td th:text="${employee.empNo}"></td>
+                    <td th:text="${employee.employeeName}"></td>
+                    <td th:text="${employee.job}"></td>
+                    <td th:text="${employee.salary}"></td>
+                    <td>
+                        <a th:href="@{/home/emp_edit(id=${employee.empNo})}">
+                            <img th:src="@{/images/edit.png}" width="20px" height="20px" />
+                        </a>&nbsp;
+                        <a th:href="@{/home/emp_delete(id=${employee.empNo})}"
+                            onclick="return confirm('Do you want to delete the employee?')">
+                            <img th:src="@{/images/delete.png}" width="20px" height="20px" />
+                        </a>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div th:if="${employeeList.empty}">
+            <h3>Employee records not found.</h3>
+        </div>
+
+        <div>
+            <span style="color: #696464;">Showing 1 to 10 of 30 entries (filtered from 30 total entries)</span>
+            <div class="pagination_section">
+                <span th:if="${employeeList.hasPrevious()}">
+                    <a th:href="@{'/show(page=' + (${employeeList.pageable.pageNumber} - 1) + ')'}">Previous</a>
+                </span>
+
+                <span th:each="i : ${#numbers.sequence(1, employeeList.totalPages)}">
+                    <a th:href="@{'/show(page=' + (${i} - 1) + ')'}" th:text="${i}"></a>
+                </span>
+
+                <span th:if="${employeeList.hasNext()}">
+                    <a th:href="@{'/show(page=' + (${employeeList.pageable.pageNumber} + 1) + ')'}">Next</a>
+                </span>
+            </div>
+        </div>
+
+        <span th:text="${resultMsg}" style="color: red;"></span>
+    </div>
+</body>
+
+</html>

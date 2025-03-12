@@ -1,0 +1,102 @@
+@charset "ISO-8859-1";
+body {
+            font-family: Arial, Helvetica, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgb(196, 203, 208);
+        }
+
+        .main-container {
+            background-color: rgb(211, 216, 222);
+            padding: 10px;
+            border-radius: 10px;
+            width: 80%;
+            box-shadow: 0px 0px 10px 0px gray;
+            position: relative;
+        }
+
+        button {
+            font-size: 15px;
+            background-color: rgb(53, 50, 50);
+            border-radius: 5px;
+            padding: 5px;
+        }
+
+        hr {
+            color: rgb(160, 155, 155);
+            height: 1px;
+        }
+
+        .headline {
+            text-align: center;
+        }
+
+        #search {
+            float: right;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 16px;
+            text-align: left;
+        }
+
+        table th {
+            padding: 8px;
+            border-bottom: 1px solid #989191;
+            box-shadow: 0 1px 0px #aba8a8;
+        }
+
+        table td {
+            padding: 8px;
+        }
+
+        table tr:hover {
+            background-color: #f1f1f1;
+        }
+
+        .action-buttons span {
+            background-color: gray;
+            color: white;
+            margin-right: 5px;
+            padding: 5px 10px;
+            font-size: 12px;
+            cursor: pointer;
+            border-radius: 3px;
+        }
+
+        .action-buttons {
+            text-align: center;
+        }
+
+        .action-buttons span.edit {
+            background-color: gray;
+        }
+
+        .action-buttons span.delete {
+            background-color: red;
+        }
+
+        .pagination_section {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            display: flex;
+        }
+
+        .pagination_section a {
+            text-decoration: none;
+            color: #000;
+            background-color: #f0f0f0;
+            padding: 5px 10px;
+            border: 1px solid #ddd;
+        }
+
+        .pagination_section a:hover {
+            background-color: rgb(9, 93, 177);
+        }
+
+       
